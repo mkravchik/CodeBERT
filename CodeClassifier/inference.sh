@@ -4,7 +4,7 @@ python ./run.py \
     --model_name_or_path=microsoft/unixcoder-base-nine \
     --do_test \
     --train_data_file=../UniXcoder/train.jsonl \
-    --test_data_file=../UniXcoder/test.jsonl \
+    --test_data_file=./all_lines_cb_small.jsonl \
     --num_train_epochs 1 \
     --block_size 64 \
     --train_batch_size 4 \

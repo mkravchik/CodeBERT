@@ -244,8 +244,8 @@ def test(args, model, tokenizer):
     eval_acc = np.mean(labels == preds)
     logger.warning(f"Accuracy: {eval_acc}")
     with open(os.path.join(args.output_dir, "predictions.txt"), 'w') as f:
-        for example, pred in zip(eval_dataset.examples, preds):
-            f.write(str(pred) + '\n')
+        for example, pred, logits in zip(eval_dataset.examples, preds, logits):
+            f.write(str(pred) + ", " + str(logits) + '\n')
 
 
 def main():
