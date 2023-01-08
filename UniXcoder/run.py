@@ -10,7 +10,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
-
 from unixcoder import UniXcoder
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -107,6 +106,9 @@ for model in ["microsoft/unixcoder-base", "microsoft/unixcoder-base-nine","micro
     print(f'Using model {model}')
     model_base = UniXcoder(model)
     model_base.to(device)
+    total_params = sum(p.numel() for p in model_base.parameters())
+    trainable_params =  sum(p.numel() for p in model_base.parameters() if p.requires_grad)
+    print(f'There are {total_params} parameters with {trainable_params} of them trainable')
 
     # print(f'This looks like {find_closest_label(model_base, code, labels)[0]}')
     classify_code(model_base, "test.jsonl", labels=labels, labels_map=labels_map)

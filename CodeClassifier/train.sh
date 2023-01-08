@@ -1,14 +1,14 @@
 python ./run.py \
     --output_dir=./saved_models \
-    --tokenizer_name=microsoft/unixcoder-base-nine \
-    --model_name_or_path=microsoft/unixcoder-base-nine \
+    --tokenizer_name=neulab/codebert-cpp \
+    --model_name_or_path=neulab/codebert-cpp \
     --do_train \
     --do_eval \
     --do_test \
-    --train_data_file=../UniXcoder/train.jsonl \
-    --eval_data_file=../UniXcoder/valid.jsonl \
-    --test_data_file=../UniXcoder/test.jsonl \
-    --num_train_epochs 2 \
+    --train_data_file=./train_cb.jsonl \
+    --eval_data_file=./valid_cb.jsonl \
+    --test_data_file=./test_cb.jsonl \
+    --num_train_epochs 1 \
     --block_size 256 \
     --train_batch_size 4 \
     --eval_batch_size 4 \
@@ -18,3 +18,5 @@ python ./run.py \
 
     #     --tokenizer_name=microsoft/codebert-base \
     # --model_name_or_path=microsoft/codebert-base \
+    # --tokenizer_name=microsoft/unixcoder-base-nine \
+    # --model_name_or_path=microsoft/unixcoder-base-nine \

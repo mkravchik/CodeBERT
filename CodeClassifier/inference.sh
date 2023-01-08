@@ -3,8 +3,8 @@ python ./run.py \
     --tokenizer_name=microsoft/unixcoder-base-nine \
     --model_name_or_path=microsoft/unixcoder-base-nine \
     --do_test \
-    --train_data_file=../UniXcoder/train.jsonl \
-    --test_data_file=./all_lines_cb_small.jsonl \
+    --train_data_file=./train_cb.jsonl \
+    --test_data_file=./test_cb.jsonl \
     --num_train_epochs 1 \
     --block_size 64 \
     --train_batch_size 4 \
